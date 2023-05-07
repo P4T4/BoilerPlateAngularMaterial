@@ -1,0 +1,42 @@
+.submenu {
+  overflow: hidden;
+  transition: all 300ms ease;
+  transform: scaleY(0);
+  transform-origin: top;
+  padding-left: 30px;
+  height: 0;
+}
+
+.submenu.expanded {
+  height: auto !important;
+  transform: scaleY(1);
+}
+
+.inline-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.inline-items-centered {
+  display: flex;
+  align-items: center;
+  margin-left: 14%;
+}
+
+.inherit-font-sidenav {
+  margin-left: 9%;
+  font-size: initial;
+}
+
+.mr-10-percent {
+  margin-right: 10%;
+}
+
+.ml-8-percent {
+  margin-left: 8%;
+}
+
+.pl-14-percent {
+  padding-left: 14%;
+}

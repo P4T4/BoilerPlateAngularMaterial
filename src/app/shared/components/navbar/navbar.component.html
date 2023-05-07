@@ -1,0 +1,32 @@
+<mat-toolbar color="primary" class="example-toolbar">
+  <button mat-icon-button (click)="isExpanded = !isExpanded">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1 class="example-app-name">Nested Menus</h1>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav
+    #sidenav
+    class="example-sidenav"
+    mode="side"
+    opened="true"
+    (mouseenter)="mouseenter()"
+    (mouseleave)="mouseleave()"
+  >
+    <mat-nav-list>
+      <ng-container *ngFor="let navLink of navLinkList">
+        <app-nav-list
+          [navLink]="navLink"
+          [isExpanded]="isExpanded"
+          [isShowing]="isShowing"
+        ></app-nav-list>
+      </ng-container>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <ng-content></ng-content>
+</mat-sidenav-container>
+
+<!-- Copyright 2017 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
