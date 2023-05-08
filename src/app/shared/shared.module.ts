@@ -8,10 +8,20 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTreeModule } from '@angular/material/tree';
 import { NavListComponent } from './components/nav-list/nav-list.component';
+import { AnimateDirective } from './directives/animate.directive';
 
 @NgModule({
-  declarations: [NavbarComponent, NavListComponent],
-  exports: [NavbarComponent],
+  declarations: [NavbarComponent, NavListComponent, AnimateDirective],
+  exports: [
+    NavbarComponent,
+    AnimateDirective,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatListModule,
+    MatSidenavModule,
+    MatTreeModule,
+  ],
   imports: [
     CommonModule,
     MatToolbarModule,
