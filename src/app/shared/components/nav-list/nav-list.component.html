@@ -1,11 +1,11 @@
-<ng-container *ngIf="navLink.children.length === 0; else tieneSubMenus">
+<ng-container *ngIf="navLink?.children?.length === 0; else tieneSubMenus">
   <a
     mat-list-item
     href="..."
     class="inline-items"
     [ngClass]="{ 'pl-14-percent': isExpandedOrIsShowing }"
   >
-    <mat-icon mat-list-icon class="mr-10-percent">{{ navLink.icon }}</mat-icon>
+    <mat-icon mat-list-icon class="mr-10-percent">{{ navLink?.icon ?? 'home' }}</mat-icon>
     <span *ngIf="isExpandedOrIsShowing">{{ navLink.label }}</span>
   </a>
 </ng-container>
@@ -13,7 +13,7 @@
   <div class="h-100">
     <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
       <div class="inline-items">
-        <mat-icon mat-list-icon>{{ navLink.icon }}</mat-icon>
+        <mat-icon mat-list-icon>{{ navLink?.icon ?? 'home' }}</mat-icon>
         <span *ngIf="isExpandedOrIsShowing"> {{ navLink.label }} </span>
         <mat-icon
           class="menu-button"
@@ -29,7 +29,7 @@
       [ngClass]="{ expanded: showSubmenu }"
       *ngIf="isExpandedOrIsShowing"
     >
-      <ng-container *ngFor="let navLinkChildren of navLink.children">
+      <ng-container *ngFor="let navLinkChildren of navLink?.children">
         <app-nav-list
           [navLink]="navLinkChildren"
           [isExpanded]="isExpanded"
